@@ -1,0 +1,15 @@
+.todo-add__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+
+.todo-add__container input[type="textfield"] {
+   width: -webkit-fill-available;
+    margin: 0 23px;
+    font-size: medium;
+}
+
+.todo-add__container input[type="button"]{
+}
