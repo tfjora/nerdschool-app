@@ -1,6 +1,6 @@
-import "./addTodo.css";
 import React from "react";
 import PropTypes from "prop-types";
+import "./addTodo.css";
 
 class AddTodo extends React.Component {
 

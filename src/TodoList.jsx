@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Todo from "./Todo";
-import TodoItem from "./TodoItem";
+import TodoItemContainer from "./TodoItemContainer";
 
 const TodoList = ({ todos }) => (
     <div>
-        {todos.map(todo => <TodoItem key={todo.id} id={todo.id} description={todo.description} />)}
+        {todos.map(todo => <TodoItemContainer key={todo.id} id={todo.id} description={todo.description} />)}
     </div>
 );
 
