@@ -2,23 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createTodo } from "./todoAction";
+import { getNextId } from './todosReducer';
 import AddTodo from "./AddTodo";
 
-const AddTodoContainer = ({ createTodoFn }) => <AddTodo createTodoFn={createTodoFn} />;
+const AddTodoContainer = props => <AddTodo {...props} />;
 
-AddTodoContainer.propTypes = {
-    createTodoFn: PropTypes.func.isRequired
-};
+const mapStateToProps = state => ({
+    nextId: getNextId(state)
+})
 
 const mapDispatchToProps = dispatch => ({
-    createTodoFn: description => dispatch(createTodo(description))
+    createTodoFn: (id, description) => dispatch(createTodo(id, description))
 });
 
 AddTodoContainer.propTypes = {
+    nextId: PropTypes.number.isRequired,
     createTodoFn: PropTypes.func.isRequired
 };
 
 export default connect (
-    null, 
+    mapStateToProps, 
     mapDispatchToProps
 )(AddTodoContainer);

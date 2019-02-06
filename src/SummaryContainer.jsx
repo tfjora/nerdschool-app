@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 
 SummaryContainer.propTypes = {
     todosCount: PropTypes.number.isRequired,
-    completedTodosCount: PropTypes.number
+    completedTodosCount: PropTypes.number.isRequired
 }
 
 export default connect(

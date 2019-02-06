@@ -7,10 +7,10 @@ import Todo from "./Todo";
 
 class TodoListContainer extends React.Component {
     componentDidMount() {
-        this.props.createTodoFn("Wake up");
-        this.props.createTodoFn("Do the dishes");
-        this.props.createTodoFn("Fold clothes");
-        this.props.createTodoFn("Browse Reddit");
+        this.props.createTodoFn(1, "Wake up");
+        this.props.createTodoFn(2, "Do the dishes");
+        this.props.createTodoFn(3, "Fold clothes");
+        this.props.createTodoFn(4, "Browse Reddit");
     }
 
     render() {
@@ -28,7 +28,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    createTodoFn: description => dispatch(createTodo(description))
+    createTodoFn: (id, description) => dispatch(createTodo(id, description))
 });
 
 export default connect(

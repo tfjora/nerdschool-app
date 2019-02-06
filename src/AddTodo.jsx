@@ -6,11 +6,11 @@ class AddTodo extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             userInput: ''
         }
-        
+
         this.onUserInput = this.onUserInput.bind(this);
         this.onAddClick = this.onAddClick.bind(this);
     }
@@ -31,13 +31,14 @@ class AddTodo extends React.Component {
     }
 
     onAddClick() {
-        this.props.createTodoFn(this.state.userInput);
+        const { createTodoFn, nextId } = this.props;
+        createTodoFn(nextId, this.state.userInput);
     }
-
 }
 
 AddTodo.propTypes = {
-    createTodoFn: PropTypes.func.isRequired
+    createTodoFn: PropTypes.func.isRequired,
+    nextId: PropTypes.number.isRequired
 };
 
 export default AddTodo;
